@@ -3,17 +3,23 @@ import {
   BaseEntityProps,
 } from 'src/domain/@shared/entities/base.entity';
 
-interface PersonEntityProps extends BaseEntityProps {
+interface SponsorEntityProps extends BaseEntityProps {
   firstName: string;
   lastName: string;
   birthDate: Date;
+  document: string;
+  email: string;
+  phone: string;
 }
-export class PersonEntity extends BaseEntity {
+export class SponsorEntity extends BaseEntity {
   firstName: string;
   lastName: string;
   birthDate: Date;
+  document: string;
+  email: string;
+  phone: string;
 
-  constructor(props: PersonEntityProps) {
+  constructor(props: SponsorEntityProps) {
     super({
       id: props.id,
       createDate: props.createDate,
@@ -22,6 +28,9 @@ export class PersonEntity extends BaseEntity {
     this.firstName = props.firstName;
     this.lastName = props.lastName;
     this.birthDate = props.birthDate;
+    this.document = props.document;
+    this.email = props.email;
+    this.phone = props.phone;
 
     this.validate();
   }
